@@ -158,31 +158,37 @@ class MainScreenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 5,
-      child: Container(
-        margin: EdgeInsets.only(top: 30),
-        child: Scaffold(
-          body: GridView.builder(
-            padding: const EdgeInsets.all(20),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-            ),
-            itemCount: _widgetList.length,
-            itemBuilder: (context, index) {
-              return _buildTextButton(
-                text: _widgetList[index]["text"],
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => _widgetList[index]["widget"],
-                    ),
-                  );
-                },
-              );
-            },
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'Flutter Widget List',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(255, 0, 0, 0)),
           ),
+        ),
+        body: GridView.builder(
+          padding: const EdgeInsets.all(20),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
+          ),
+          itemCount: _widgetList.length,
+          itemBuilder: (context, index) {
+            return _buildTextButton(
+              text: _widgetList[index]["text"],
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => _widgetList[index]["widget"],
+                  ),
+                );
+              },
+              iconData: Icons.flutter_dash,
+            );
+          },
         ),
       ),
     );
@@ -190,6 +196,7 @@ class MainScreenPage extends StatelessWidget {
 
   Widget _buildTextButton({
     required String text,
+    required IconData iconData,
     required VoidCallback onPressed,
   }) {
     return Container(
@@ -207,12 +214,47 @@ class MainScreenPage extends StatelessWidget {
       ),
       child: SizedBox(
         width: 180,
-        child: TextButton(
-          onPressed: onPressed,
-          child: Text(
-            text,
-            style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
-          ),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: const Color.fromARGB(
+                    255, 255, 255, 255),
+              ),
+              width: double.infinity,
+              height: double.infinity,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  iconData,
+                  color: Color.fromARGB(255, 55, 58, 196),
+                  size: 30,
+                ),
+                const SizedBox(height: 10),
+                Center(
+                  child: Text(
+                    text,
+                    style: const TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontFamily: "Times New Roman",
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Positioned.fill(
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: onPressed,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
