@@ -1,72 +1,45 @@
-import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/alertdialog_widget.dart';
-import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/autohidebox.dart';
-import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/bodywithinputbox.dart';
-import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/custombodybox.dart';
+
 import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/errorbox.dart';
 import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/infodialog.dart';
-import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/noheaderbox.dart';
 import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/sucessbox.dart';
 import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/warningbox.dart';
 import 'package:flutter/material.dart';
 
-class AllDialogTypesPage extends StatelessWidget {
-  AllDialogTypesPage({super.key});
+class AppBarWidget extends StatelessWidget {
+  AppBarWidget({super.key});
 
   final List<Map<String, dynamic>> _widgetList = [
     {
-      "text": "Info Dialog Box",
+      "text": "Basic App Bar",
       "widget": const InfoDialog(),
       "iconData": Icons.info_outline,
-      "color": const Color.fromARGB(162, 73, 39, 224),
+      "color": Color.fromARGB(162, 73, 39, 224),
     },
     {
-      "text": "Warning Dialog Box",
+      "text": "Bottom Navigation Bar",
       "widget": const WarningDialog(),
       "iconData": Icons.warning_amber_rounded,
-      "color": const Color.fromARGB(255, 255, 0, 0),
+      "color": Color.fromARGB(255, 255, 0, 0),
     },
     {
-      "text": "Error Dialog Box",
+      "text": "Sliver App Bar",
       "widget": const ErrorDialog(),
       "iconData": Icons.error_outline,
-      "color": const Color.fromARGB(255, 241, 28, 28),
+      "color": Color.fromARGB(255, 241, 28, 28),
     },
     {
-      "text": "Success Dialog Box",
+      "text": "Collapsed App Bar",
       "widget": const SuccessDialog(),
       "iconData": Icons.check_circle_outline,
-      "color": const Color.fromARGB(255, 0, 255, 42),
+      "color": Color.fromARGB(255, 0, 255, 42),
     },
-    {
-      "text": " NoHeader Dialog Box",
-      "widget": const NoHeaderDialog(),
-      "iconData": Icons.flutter_dash_rounded,
-      "color": const Color.fromARGB(162, 73, 39, 224),
+     {
+      "text": "Tab App Bar",
+      "widget": const SuccessDialog(),
+      "iconData": Icons.check_circle_outline,
+      "color": Color.fromARGB(255, 0, 255, 42),
     },
-    {
-      "text": "Auto Hide Dialog Box",
-      "widget": const AutoHideDialog(),
-      "iconData": Icons.flutter_dash_rounded,
-      "color": const Color.fromARGB(162, 73, 39, 224),
-    },
-    {
-      "text": "Custom Body Dialog Box",
-      "widget": const CustomBodyDialog(),
-      "iconData": Icons.flutter_dash_rounded,
-      "color": const Color.fromARGB(162, 73, 39, 224),
-    },
-    {
-      "text": "Body With Input Dialog Box",
-      "widget": const BodyWithInput(),
-      "iconData": Icons.flutter_dash_rounded,
-      "color": const Color.fromARGB(162, 73, 39, 224),
-    },
-    {
-      "text": "AlertDialog Box Widget",
-      "widget": const AlertDialogBoxWidget(),
-      "iconData": Icons.warning_outlined,
-      "color": const Color.fromARGB(255, 255, 0, 0)
-    },
+  
   ];
 
   @override
@@ -118,11 +91,11 @@ class AllDialogTypesPage extends StatelessWidget {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 255, 255, 255),
+        color: Color.fromARGB(255, 255, 255, 255),
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
-            color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
+            color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 2),

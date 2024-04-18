@@ -1,9 +1,8 @@
 import 'package:all_widget/pages/dialogbox/all_type_of_alertbox.dart';
 import 'package:flutter/material.dart';
-import 'package:all_widget/pages/alertdialog_widget.dart';
-import 'package:all_widget/pages/appbar_widget.dart';
+import 'package:all_widget/pages/appbar/appbar_widget.dart';
 import 'package:all_widget/pages/aspectratio_widget.dart';
-import 'package:all_widget/pages/bottom_nav_bar_widget.dart';
+import 'package:all_widget/pages/appbar/app_bar_all_pages/bottom_nav_bar_widget.dart';
 import 'package:all_widget/pages/button_widget.dart';
 import 'package:all_widget/pages/cliprrect_widget.dart';
 import 'package:all_widget/pages/column_widget.dart';
@@ -28,10 +27,9 @@ import 'package:all_widget/pages/text_widget.dart';
 import 'package:all_widget/pages/textfield_widget.dart';
 import 'package:all_widget/pages/tooltip_widget.dart';
 import 'package:all_widget/pages/wrap_widget.dart';
-import 'package:flutter/widgets.dart';
 
 class MainScreenPage extends StatelessWidget {
-  MainScreenPage({Key? key});
+  MainScreenPage({super.key,});
 
   final List<Map<String, dynamic>> _widgetList = [
     {
@@ -40,13 +38,8 @@ class MainScreenPage extends StatelessWidget {
       "iconData": Icons.flutter_dash_sharp,
     },
     {
-      "text": "AlertDialog Box Widget",
-      "widget": const AlertDialogBoxWidget(),
-      "iconData": Icons.warning_outlined,
-    },
-    {
       "text": "AppBar Widget",
-      "widget": const AppBarWidget(),
+      "widget":  AppBarWidget(),
       "iconData": Icons.flutter_dash_sharp,
     },
     {
@@ -228,11 +221,11 @@ class MainScreenPage extends StatelessWidget {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
+        color: const Color.fromARGB(255, 255, 255, 255),
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
-            color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
+            color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 2),
@@ -257,7 +250,7 @@ class MainScreenPage extends StatelessWidget {
               children: [
                 Icon(
                   iconData,
-                  color: Color.fromARGB(162, 73, 39, 224),
+                  color: const Color.fromARGB(162, 73, 39, 224),
                   size: 30,
                 ),
                 const SizedBox(height: 10),
