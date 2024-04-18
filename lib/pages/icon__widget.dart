@@ -7,9 +7,9 @@ class IconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Multiple Icons Example'),
+        title: const Text('Icons Example'),
       ),
-      body: Center(
+      body: const Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -17,18 +17,21 @@ class IconWidget extends StatelessWidget {
               Icons.star,
               size: 50,
               color: Colors.yellow,
+              semanticLabel: "Star",
             ),
             SizedBox(width: 20),
             Icon(
               Icons.favorite,
               size: 50,
               color: Colors.red,
+              semanticLabel: "Heart",
             ),
             SizedBox(width: 20),
             Icon(
               Icons.thumb_up,
               size: 50,
               color: Colors.blue,
+              semanticLabel: "Thumb Up",
             ),
           ],
         ),
