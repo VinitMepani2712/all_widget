@@ -1,4 +1,5 @@
 import 'package:all_widget/pages/dialogboxwidget/all_type_of_alertbox.dart';
+import 'package:all_widget/pages/all_process_Indicator_widget/all_process_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:all_widget/pages/appbarwidget/appbar_widget.dart';
 import 'package:all_widget/pages/aspectratio_widget.dart';
@@ -36,6 +37,11 @@ class MainScreenPage extends StatelessWidget {
     {
       "text": "All Dialog Box Widget",
       "widget": AllDialogTypesPage(),
+      "iconData": Icons.flutter_dash_sharp,
+    },
+    {
+      "text": "All Process Indicator",
+      "widget": AllProcessIndicatorPage(),
       "iconData": Icons.flutter_dash_sharp,
     },
     {
