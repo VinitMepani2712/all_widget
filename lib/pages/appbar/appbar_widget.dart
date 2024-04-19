@@ -1,8 +1,8 @@
+import 'package:all_widget/pages/appbar/app_bar_all_pages/basic_appbar.dart';
+import 'package:all_widget/pages/appbar/app_bar_all_pages/bottom_nav_bar_widget.dart';
+import 'package:all_widget/pages/appbar/app_bar_all_pages/silver_app_bar.dart';
+import 'package:all_widget/pages/appbar/app_bar_all_pages/tab_bar.dart';
 
-import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/errorbox.dart';
-import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/infodialog.dart';
-import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/sucessbox.dart';
-import 'package:all_widget/pages/dialogbox/dialgbox_all_pages/warningbox.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget {
@@ -11,35 +11,29 @@ class AppBarWidget extends StatelessWidget {
   final List<Map<String, dynamic>> _widgetList = [
     {
       "text": "Basic App Bar",
-      "widget": const InfoDialog(),
-      "iconData": Icons.info_outline,
+      "widget": const BasicAppBar(),
+      "iconData": Icons.flutter_dash_sharp,
       "color": Color.fromARGB(162, 73, 39, 224),
     },
     {
       "text": "Bottom Navigation Bar",
-      "widget": const WarningDialog(),
-      "iconData": Icons.warning_amber_rounded,
-      "color": Color.fromARGB(255, 255, 0, 0),
-    },
-    {
-      "text": "Sliver App Bar",
-      "widget": const ErrorDialog(),
-      "iconData": Icons.error_outline,
-      "color": Color.fromARGB(255, 241, 28, 28),
-    },
-    {
-      "text": "Collapsed App Bar",
-      "widget": const SuccessDialog(),
-      "iconData": Icons.check_circle_outline,
-      "color": Color.fromARGB(255, 0, 255, 42),
-    },
-     {
-      "text": "Tab App Bar",
-      "widget": const SuccessDialog(),
-      "iconData": Icons.check_circle_outline,
-      "color": Color.fromARGB(255, 0, 255, 42),
+      "widget": const BottomNavigationAppBar(),
+      "iconData": Icons.flutter_dash_sharp,
+      "color": Color.fromARGB(162, 73, 39, 224),
     },
   
+    {
+      "text": "Sliver App Bar",
+      "widget": const SilverAppBar(),
+      "iconData": Icons.flutter_dash_sharp,
+      "color": Color.fromARGB(162, 73, 39, 224),
+    },
+    {
+      "text": "Tab App Bar",
+      "widget": const TabAppBar(),
+      "iconData": Icons.flutter_dash_sharp,
+      "color": Color.fromARGB(162, 73, 39, 224),
+    },
   ];
 
   @override
