@@ -1,6 +1,6 @@
-import 'package:all_widget/pages/dialogbox/all_type_of_alertbox.dart';
+import 'package:all_widget/pages/dialogboxwidget/all_type_of_alertbox.dart';
 import 'package:flutter/material.dart';
-import 'package:all_widget/pages/appbar/appbar_widget.dart';
+import 'package:all_widget/pages/appbarwidget/appbar_widget.dart';
 import 'package:all_widget/pages/aspectratio_widget.dart';
 import 'package:all_widget/pages/button_widget.dart';
 import 'package:all_widget/pages/cliprrect_widget.dart';
