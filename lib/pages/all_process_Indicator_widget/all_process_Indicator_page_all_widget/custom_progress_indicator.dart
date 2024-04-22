@@ -1,3 +1,4 @@
+import 'package:all_widget/pages/all_process_Indicator_widget/all_process_Indicator_page_all_widget/show_code.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 
@@ -48,9 +49,26 @@ class CustomProgressIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: const Text('Demo'),
-        ),
+        appBar: AppBar(title: const Text('Custom Loading'), actions: [
+          PopupMenuButton(
+            icon: const Icon(Icons.more_vert),
+            onSelected: (value) {
+              switch (value) {
+                case 'showCode':
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ShowCodePage()),
+                  );
+              }
+            },
+            itemBuilder: (BuildContext context) => [
+              const PopupMenuItem(
+                value: 'showCode',
+                child: Text('Show Code'),
+              ),
+            ],
+          ),
+        ]),
         body: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
@@ -121,3 +139,5 @@ class CustomProgressIndicator extends StatelessWidget {
         ),
       );
 }
+
+class showCode {}
