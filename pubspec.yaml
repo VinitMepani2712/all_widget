@@ -37,6 +37,7 @@ dependencies:
   awesome_dialog: ^3.2.0
   highlight: ^0.7.0
   flutter_highlight: ^0.7.0
+  loading_indicator: ^3.1.1
 
 dev_dependencies:
   flutter_test:

@@ -5,6 +5,24 @@ class CircularProgressIndicatorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sample Progress Bar'),
+        backgroundColor: Color(0xFF5BA98F),
+        centerTitle: true,
+      ),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircularProgressIndicator(
+              backgroundColor: Colors.amberAccent,
+              valueColor: AlwaysStoppedAnimation(Colors.teal),
+              strokeWidth: 5,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

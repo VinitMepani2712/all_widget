@@ -5,6 +5,24 @@ class LinearProgressIndicatorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sample Progress Bar'),
+        backgroundColor: Colors.blue,
+        centerTitle: true,
+      ),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            LinearProgressIndicator(
+              backgroundColor: Colors.amberAccent,
+              valueColor: AlwaysStoppedAnimation(Colors.teal),
+              minHeight: 5,
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

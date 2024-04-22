@@ -1,289 +1,123 @@
 import 'package:flutter/material.dart';
+import 'package:loading_indicator/loading_indicator.dart';
+
+const List<Color> _kDefaultRainbowColors = [
+  Colors.red,
+  Colors.orange,
+  Colors.yellow,
+  Colors.green,
+  Colors.blue,
+  Colors.indigo,
+  Colors.purple,
+];
 
 class CustomProgressIndicator extends StatelessWidget {
   const CustomProgressIndicator({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Custom Circular Progress Indicators'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            CustomCircularProgress(type: 1),
-            CustomCircularProgress(type: 2),
-            CustomCircularProgress(type: 3),
-            CustomCircularProgress(type: 4),
-            CustomCircularProgress(type: 5),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class CustomCircularProgress extends StatefulWidget {
-  final int type;
-
-  const CustomCircularProgress({Key? key, required this.type})
-      : super(key: key);
-
-  @override
-  _CustomCircularProgressState createState() => _CustomCircularProgressState();
-}
-
-class _CustomCircularProgressState extends State<CustomCircularProgress>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 2),
-    )..repeat(); // Repeats the animation indefinitely
-
-    _animation = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeInOut,
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 100,
-      child: AnimatedBuilder(
-        animation: _animation,
-        builder: (context, child) {
-          switch (widget.type) {
-            case 1:
-              return CustomPaint(
-                painter: MyPainter1(
-                  angle: _animation.value * 360,
-                  color: Colors.blue,
-                  strokeWidth: 5,
+  _showSingleAnimationDialog(
+    BuildContext context,
+    Indicator indicator,
+    bool showPathBackground,
+  ) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        fullscreenDialog: false,
+        builder: (context) {
+          return Scaffold(
+            appBar: AppBar(
+              title: Text(indicator.toString().split('.').last),
+            ),
+            body: Padding(
+              padding: const EdgeInsets.all(64),
+              child: Center(
+                child: LoadingIndicator(
+                  indicatorType: indicator,
+                  colors: _kDefaultRainbowColors,
+                  strokeWidth: 4.0,
+                  pathBackgroundColor:
+                      showPathBackground ? Colors.black45 : null,
                 ),
-              );
-            case 2:
-              return CustomPaint(
-                painter: MyPainter2(
-                  angle: _animation.value * 360,
-                  color: Colors.green,
-                  strokeWidth: 8,
-                ),
-              );
-            case 3:
-              return CustomPaint(
-                painter: MyPainter3(
-                  angle: _animation.value * 360,
-                  color: Colors.red,
-                  strokeWidth: 10,
-                ),
-              );
-            case 4:
-              return CustomPaint(
-                painter: MyPainter4(
-                  angle: _animation.value * 360,
-                  color: Colors.orange,
-                  strokeWidth: 7,
-                ),
-              );
-            case 5:
-              return CustomPaint(
-                painter: MyPainter5(
-                  angle: _animation.value * 360,
-                  color: Colors.purple,
-                  strokeWidth: 6,
-                ),
-              );
-            default:
-              return SizedBox();
-          }
+              ),
+            ),
+          );
         },
       ),
     );
   }
 
   @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-}
-
-class MyPainter1 extends CustomPainter {
-  final double angle;
-  final Color color;
-  final double strokeWidth;
-
-  MyPainter1(
-      {required this.angle, required this.color, required this.strokeWidth});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final double radius = size.width / 2;
-
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = strokeWidth
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
-
-    canvas.drawArc(
-      Rect.fromCircle(center: Offset(radius, radius), radius: radius),
-      0,
-      angle * (3.14 / 180), // Convert angle to radians
-      false,
-      paint,
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-}
-
-class MyPainter2 extends CustomPainter {
-  final double angle;
-  final Color color;
-  final double strokeWidth;
-
-  MyPainter2(
-      {required this.angle, required this.color, required this.strokeWidth});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final double radius = size.width / 2;
-
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = strokeWidth
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
-
-    for (int i = 0; i < 8; i++) {
-      final double startAngle = i * (360 / 8);
-      final double endAngle = startAngle + 45;
-      canvas.drawArc(
-        Rect.fromCircle(center: Offset(radius, radius), radius: radius),
-        startAngle * (3.14 / 180), // Convert angle to radians
-        endAngle * (3.14 / 180), // Convert angle to radians
-        false,
-        paint,
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: const Text('Demo'),
+        ),
+        body: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.5,
+          ),
+          itemBuilder: (ctx, index) {
+            return InkWell(
+              onTap: () => _showSingleAnimationDialog(
+                ctx,
+                Indicator.values[index],
+                false,
+              ),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 3,
+                      blurRadius: 5,
+                      offset: const Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
+                padding: const EdgeInsets.all(8.0),
+                margin: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 5.0),
+                      child: Text(
+                        Indicator.values[index].toString().split('.').last,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: LoadingIndicator(
+                        colors: _kDefaultRainbowColors,
+                        indicatorType: Indicator.values[index],
+                        strokeWidth: 3,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      '${index + 1}',
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+          itemCount: Indicator.values.length,
+        ),
       );
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-}
-
-class MyPainter3 extends CustomPainter {
-  final double angle;
-  final Color color;
-  final double strokeWidth;
-
-  MyPainter3(
-      {required this.angle, required this.color, required this.strokeWidth});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final double radius = size.width / 2;
-
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = strokeWidth
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
-
-    final path = Path();
-    path.moveTo(radius, 0);
-    path.lineTo(radius + radius * (angle / 360), radius);
-    path.lineTo(radius, radius * 2);
-    path.lineTo(radius - radius * (angle / 360), radius);
-    path.close();
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-}
-
-class MyPainter4 extends CustomPainter {
-  final double angle;
-  final Color color;
-  final double strokeWidth;
-
-  MyPainter4(
-      {required this.angle, required this.color, required this.strokeWidth});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final double radius = size.width / 2;
-
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = strokeWidth
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
-
-    final path = Path();
-    path.moveTo(radius, 0);
-    path.lineTo(radius + radius * (angle / 360), radius);
-    path.lineTo(radius, radius * 2);
-    path.lineTo(radius - radius * (angle / 360), radius);
-    path.close();
-
-    canvas.rotate(angle * 0.0174533);
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-}
-
-class MyPainter5 extends CustomPainter {
-  final double angle;
-  final Color color;
-  final double strokeWidth;
-
-  MyPainter5(
-      {required this.angle, required this.color, required this.strokeWidth});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final double radius = size.width / 2;
-
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = strokeWidth
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
-
-    canvas.drawCircle(
-      Offset(radius, radius),
-      radius * (angle / 360),
-      paint,
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
 }

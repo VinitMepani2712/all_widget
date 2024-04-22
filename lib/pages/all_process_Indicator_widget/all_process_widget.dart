@@ -18,7 +18,7 @@ class AllProcessIndicatorPage extends StatelessWidget {
       "iconData": Icons.linear_scale_outlined,
     },
     {
-      "text": "Custom Progress Indicator",
+      "text": "Custom Loding Indicator",
       "widget": const CustomProgressIndicator(),
       "iconData": Icons.dashboard_customize_outlined,
     },
