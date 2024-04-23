@@ -1,5 +1,5 @@
 import 'package:all_widget/pages/B/button_widget.dart';
-import 'package:all_widget/pages/D/dialogboxwidget/all_type_of_alertbox.dart';
+import 'package:all_widget/pages/D/all_type_of_dialogbox.dart';
 import 'package:all_widget/pages/A/all_process_Indicator_widget/all_process_widget.dart';
 import 'package:all_widget/pages/W/wrap_widget.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,7 @@ import 'package:all_widget/pages/A/aspectratio_widget.dart';
 import 'package:all_widget/pages/C/cliprrect_widget.dart';
 import 'package:all_widget/pages/C/column_widget.dart';
 import 'package:all_widget/pages/C/container_widget.dart';
-import 'package:all_widget/pages/D/dialogboxwidget/drawer_widget.dart';
+import 'package:all_widget/pages/D/drawer_widget.dart';
 import 'package:all_widget/pages/E/expanded_widget.dart';
 import 'package:all_widget/pages/F/fitted_box_widget.dart';
 import 'package:all_widget/pages/G/gridview_widget.dart';

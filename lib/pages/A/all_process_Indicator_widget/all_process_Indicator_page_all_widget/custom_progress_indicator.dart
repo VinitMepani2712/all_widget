@@ -51,7 +51,7 @@ class CustomProgressIndicator extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(title: const Text('Custom Loading'), actions: [
           PopupMenuButton(
-            icon: const Icon(Icons.more_vert),
+            icon: const Icon(Icons.web),
             onSelected: (value) {
               switch (value) {
                 case 'showCode':
@@ -139,4 +139,3 @@ class CustomProgressIndicator extends StatelessWidget {
         ),
       );
 }
-

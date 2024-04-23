@@ -1,12 +1,12 @@
-import 'package:all_widget/pages/D/dialogboxwidget/dialgbox_all_pages/alertdialog_widget.dart';
-import 'package:all_widget/pages/D/dialogboxwidget/dialgbox_all_pages/autohidebox.dart';
-import 'package:all_widget/pages/D/dialogboxwidget/dialgbox_all_pages/bodywithinputbox.dart';
-import 'package:all_widget/pages/D/dialogboxwidget/dialgbox_all_pages/custombodybox.dart';
-import 'package:all_widget/pages/D/dialogboxwidget/dialgbox_all_pages/errorbox.dart';
-import 'package:all_widget/pages/D/dialogboxwidget/dialgbox_all_pages/infodialog.dart';
-import 'package:all_widget/pages/D/dialogboxwidget/dialgbox_all_pages/noheaderbox.dart';
-import 'package:all_widget/pages/D/dialogboxwidget/dialgbox_all_pages/sucessbox.dart';
-import 'package:all_widget/pages/D/dialogboxwidget/dialgbox_all_pages/warningbox.dart';
+import 'package:all_widget/pages/D/dialgbox_all_pages/alertdialog_widget.dart';
+import 'package:all_widget/pages/D/dialgbox_all_pages/autohidebox.dart';
+import 'package:all_widget/pages/D/dialgbox_all_pages/bodywithinputbox.dart';
+import 'package:all_widget/pages/D/dialgbox_all_pages/custombodybox.dart';
+import 'package:all_widget/pages/D/dialgbox_all_pages/errorbox.dart';
+import 'package:all_widget/pages/D/dialgbox_all_pages/infodialog.dart';
+import 'package:all_widget/pages/D/dialgbox_all_pages/noheaderbox.dart';
+import 'package:all_widget/pages/D/dialgbox_all_pages/sucessbox.dart';
+import 'package:all_widget/pages/D/dialgbox_all_pages/warningbox.dart';
 import 'package:flutter/material.dart';
 
 class AllDialogTypesPage extends StatelessWidget {
