@@ -1,4 +1,4 @@
-import 'package:all_widget/codepage/show_code_file.dart';
+import 'package:all_widget/components/codepage/show_code_file.dart';
 import 'package:flutter/material.dart';
 
 class AlertDialogBoxWidget extends StatefulWidget {

@@ -1,5 +1,5 @@
-import 'package:all_widget/codepage/show_code_file.dart';
-import 'package:all_widget/textstyle_support/textstyle.dart';
+import 'package:all_widget/components/codepage/show_code_file.dart';
+import 'package:all_widget/components/textstyle_support/textstyle.dart';
 import 'package:flutter/material.dart';
 
 class TabAppBar extends StatelessWidget {
