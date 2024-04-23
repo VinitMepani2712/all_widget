@@ -1,7 +1,7 @@
-import 'package:all_widget/pages/appbarwidget/app_bar_all_pages/basic_appbar.dart';
-import 'package:all_widget/pages/appbarwidget/app_bar_all_pages/bottom_nav_bar_widget.dart';
-import 'package:all_widget/pages/appbarwidget/app_bar_all_pages/silver_app_bar.dart';
-import 'package:all_widget/pages/appbarwidget/app_bar_all_pages/tab_bar.dart';
+import 'package:all_widget/pages/A/appbarwidget/app_bar_all_pages/basic_appbar.dart';
+import 'package:all_widget/pages/A/appbarwidget/app_bar_all_pages/bottom_nav_bar_widget.dart';
+import 'package:all_widget/pages/A/appbarwidget/app_bar_all_pages/silver_app_bar.dart';
+import 'package:all_widget/pages/A/appbarwidget/app_bar_all_pages/tab_bar.dart';
 
 import 'package:flutter/material.dart';
 

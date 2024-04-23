@@ -1,15 +1,15 @@
 import 'package:all_widget/codepage/show_code_file.dart';
-import 'package:all_widget/textstyle/textstyle.dart';
+import 'package:all_widget/textstyle_support/textstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
-class CustomBodyDialog extends StatelessWidget {
-  const CustomBodyDialog({super.key});
+class WarningDialog extends StatelessWidget {
+  const WarningDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Show Custom Body Dialog')),
+      appBar: AppBar(title: const Text('Warning Dialog')),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -18,15 +18,15 @@ class CustomBodyDialog extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 78, 141, 235),
+                color: const Color.fromARGB(255, 238, 130, 130),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: TextButton(
                 onPressed: () {
-                  _showCustomBodyDialogCode(context);
+                  _showWarningDialog(context);
                 },
                 child: Text(
-                  'Show Custom Body Dialog',
+                  'Show Warning Dialog',
                   style: AppWidget.textStyle(),
                 ),
               ),
@@ -43,7 +43,7 @@ class CustomBodyDialog extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => CodePage(
-                      code: _customBodyDialogCode,
+                      code: _warningDialogCode,
                     ),
                   ),
                 );
@@ -61,44 +61,50 @@ class CustomBodyDialog extends StatelessWidget {
     );
   }
 
-  void _showCustomBodyDialogCode(BuildContext context) {
+  void _showWarningDialog(BuildContext context) {
     AwesomeDialog(
       context: context,
-      animType: AnimType.scale,
-      dialogType: DialogType.info,
+      dialogType: DialogType.warning,
       borderSide: const BorderSide(
-        color: Colors.green,
+        color: Colors.yellow,
         width: 5,
       ),
       width: 500,
       buttonsBorderRadius: const BorderRadius.all(
         Radius.circular(2),
       ),
-      body: const Center(
-        child: Text(
-          'Write you information here',
-          style: TextStyle(fontStyle: FontStyle.italic),
-        ),
-      ),
-      title: 'This is Ignored',
-      desc: 'This is also Ignored',
+      dismissOnTouchOutside: true,
+      dismissOnBackKeyPress: false,
+      onDismissCallback: (type) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Dismissed by $type'),
+          ),
+        );
+      },
+      animType: AnimType.bottomSlide,
+      title: 'Question',
+      desc: 'Warning Dialog Box',
+      buttonsTextStyle: const TextStyle(color: Colors.black),
+      showCloseIcon: true,
+      btnCancelOnPress: () {},
+      btnOkOnPress: () {},
     ).show();
   }
 
-  final String _customBodyDialogCode = '''
-
+  final String _warningDialogCode = '''
 import 'package:all_widget/codepage/show_code_file.dart';
 import 'package:all_widget/textstyle/textstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
-class CustomBodyDialog extends StatelessWidget {
-  const CustomBodyDialog({super.key});
+class WarningDialog extends StatelessWidget {
+  const WarningDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Show Body with input Dialog')),
+      appBar: AppBar(title: const Text('Warning Dialog')),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -107,15 +113,15 @@ class CustomBodyDialog extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 130, 236, 103),
+                color: const Color.fromARGB(255, 238, 130, 130),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: TextButton(
                 onPressed: () {
-                  _showCustomBodyDialogCode(context);
+                  _showWarningDialog(context);
                 },
                 child: Text(
-                  'Show Body with input Dialog',
+                  'Show Warning Dialog',
                   style: AppWidget.textStyle(),
                 ),
               ),
@@ -132,7 +138,7 @@ class CustomBodyDialog extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => CodePage(
-                      code: _customBodyDialogCode,
+                      code: _warningDialogCode,
                     ),
                   ),
                 );
@@ -150,29 +156,35 @@ class CustomBodyDialog extends StatelessWidget {
     );
   }
 
-  void _showCustomBodyDialogCode(BuildContext context) {
+  void _showWarningDialog(BuildContext context) {
     AwesomeDialog(
       context: context,
-      animType: AnimType.scale,
-      dialogType: DialogType.info,
+      dialogType: DialogType.warning,
       borderSide: const BorderSide(
-        color: Colors.green,
+        color: Colors.yellow,
         width: 5,
       ),
       width: 500,
       buttonsBorderRadius: const BorderRadius.all(
         Radius.circular(2),
       ),
-      body: const Center(
-        child: Text(
-          'Write you information here',
-          style: TextStyle(fontStyle: FontStyle.italic),
-        ),
-      ),
-      title: 'This is Ignored',
-      desc: 'This is also Ignored',
+      dismissOnTouchOutside: true,
+      dismissOnBackKeyPress: false,
+      onDismissCallback: (type) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Dismissed by (add dollar symbol here)type'),
+          ),
+        );
+      },
+      animType: AnimType.bottomSlide,
+      title: 'Question',
+      desc: 'Warning Dialog Box',
+      buttonsTextStyle: const TextStyle(color: Colors.black),
+      showCloseIcon: true,
+      btnCancelOnPress: () {},
+      btnOkOnPress: () {},
     ).show();
   }
-  
   ''';
 }

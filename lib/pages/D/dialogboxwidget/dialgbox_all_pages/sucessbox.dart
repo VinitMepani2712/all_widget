@@ -1,15 +1,15 @@
 import 'package:all_widget/codepage/show_code_file.dart';
-import 'package:all_widget/textstyle/textstyle.dart';
-import 'package:flutter/material.dart';
+import 'package:all_widget/textstyle_support/textstyle.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:flutter/material.dart';
 
-class AutoHideDialog extends StatelessWidget {
-  const AutoHideDialog({super.key});
+class SuccessDialog extends StatelessWidget {
+  const SuccessDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Auto Hide Dialog')),
+      appBar: AppBar(title: const Text('Success Dialog Box')),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -18,15 +18,15 @@ class AutoHideDialog extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 130, 236, 103),
+                color: Color.fromARGB(255, 122, 206, 192),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: TextButton(
                 onPressed: () {
-                  _showAutoHiddenDialogCode(context);
+                  _showSuccessDialogCode(context);
                 },
                 child: Text(
-                  'Show Auto Hide Dialog',
+                  'Success Dialog Box',
                   style: AppWidget.textStyle(),
                 ),
               ),
@@ -43,7 +43,7 @@ class AutoHideDialog extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => CodePage(
-                      code: _autoHiddenDialogCode,
+                      code: _successDialogCode,
                     ),
                   ),
                 );
@@ -61,13 +61,12 @@ class AutoHideDialog extends StatelessWidget {
     );
   }
 
-  void _showAutoHiddenDialogCode(BuildContext context) {
+  void _showSuccessDialogCode(BuildContext context) {
     AwesomeDialog(
       context: context,
-      dialogType: DialogType.infoReverse,
-      autoHide: const Duration(seconds: 2),
+      dialogType: DialogType.success,
       borderSide: const BorderSide(
-        color: Colors.yellow,
+        color: Colors.green,
         width: 5,
       ),
       width: 500,
@@ -83,9 +82,9 @@ class AutoHideDialog extends StatelessWidget {
           ),
         );
       },
-      animType: AnimType.scale,
-      title: 'Auto Hide Dialog',
-      desc: 'AutoHide after 2 seconds',
+      animType: AnimType.bottomSlide,
+      title: 'Success',
+      desc: 'Success Dialog Box',
       buttonsTextStyle: const TextStyle(color: Colors.black),
       showCloseIcon: true,
       btnCancelOnPress: () {},
@@ -93,20 +92,19 @@ class AutoHideDialog extends StatelessWidget {
     ).show();
   }
 
-  final String _autoHiddenDialogCode = '''
+  final String _successDialogCode = '''
 import 'package:all_widget/codepage/show_code_file.dart';
 import 'package:all_widget/textstyle/textstyle.dart';
-import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:flutter/material.dart';
 
-
-class AutoHideDialog extends StatelessWidget {
-  const AutoHideDialog({super.key});
+class SuccessDialog extends StatelessWidget {
+  const SuccessDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Auto Hide Dialog')),
+      appBar: AppBar(title: const Text('Success Dialog Box')),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -115,15 +113,15 @@ class AutoHideDialog extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 130, 236, 103),
+                color: Color.fromARGB(255, 140, 124, 233),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: TextButton(
                 onPressed: () {
-                  _showAutoHiddenDialogCode(context);
+                  _showSuccessDialogCode(context);
                 },
                 child: Text(
-                  'Show Auto Hide Dialog',
+                  'Success Dialog Box',
                   style: AppWidget.textStyle(),
                 ),
               ),
@@ -140,7 +138,7 @@ class AutoHideDialog extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => CodePage(
-                      code: _autoHiddenDialogCode,
+                      code: _successDialogCode,
                     ),
                   ),
                 );
@@ -158,13 +156,12 @@ class AutoHideDialog extends StatelessWidget {
     );
   }
 
-  void _showAutoHiddenDialogCode(BuildContext context) {
+  void _showSuccessDialogCode(BuildContext context) {
     AwesomeDialog(
       context: context,
-      dialogType: DialogType.infoReverse,
-      autoHide: const Duration(seconds: 2),
+      dialogType: DialogType.success,
       borderSide: const BorderSide(
-        color: Colors.yellow,
+        color: Colors.green,
         width: 5,
       ),
       width: 500,
@@ -176,18 +173,20 @@ class AutoHideDialog extends StatelessWidget {
       onDismissCallback: (type) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Dismissed by (Add dollar symbol here)type'),
+            content: Text('Dismissed by ()Add Dollar sign here)type'),
           ),
         );
       },
-      animType: AnimType.scale,
-      title: 'Auto Hide Dialog',
-      desc: 'AutoHide after 2 seconds',
+      animType: AnimType.bottomSlide,
+      title: 'Success',
+      desc: 'Success Dialog Box',
       buttonsTextStyle: const TextStyle(color: Colors.black),
       showCloseIcon: true,
       btnCancelOnPress: () {},
       btnOkOnPress: () {},
     ).show();
   }
+
+
 ''';
 }

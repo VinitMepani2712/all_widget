@@ -1,6 +1,6 @@
-import 'package:all_widget/pages/all_process_Indicator_widget/all_process_Indicator_page_all_widget/circular_progress_indicator.dart';
-import 'package:all_widget/pages/all_process_Indicator_widget/all_process_Indicator_page_all_widget/custom_progress_indicator.dart';
-import 'package:all_widget/pages/all_process_Indicator_widget/all_process_Indicator_page_all_widget/linear_progress_indicator.dart';
+import 'package:all_widget/pages/A/all_process_Indicator_widget/all_process_Indicator_page_all_widget/circular_progress_indicator.dart';
+import 'package:all_widget/pages/A/all_process_Indicator_widget/all_process_Indicator_page_all_widget/custom_progress_indicator.dart';
+import 'package:all_widget/pages/A/all_process_Indicator_widget/all_process_Indicator_page_all_widget/linear_progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 class AllProcessIndicatorPage extends StatelessWidget {

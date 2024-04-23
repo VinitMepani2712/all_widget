@@ -1,4 +1,4 @@
-import 'package:all_widget/pages/all_process_Indicator_widget/all_process_Indicator_page_all_widget/show_code.dart';
+import 'package:all_widget/pages/A/all_process_Indicator_widget/all_process_Indicator_page_all_widget/show_code.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 
@@ -74,10 +74,10 @@ class CustomProgressIndicator extends StatelessWidget {
             crossAxisCount: 2,
             childAspectRatio: 0.5,
           ),
-          itemBuilder: (ctx, index) {
+          itemBuilder: (context, index) {
             return InkWell(
               onTap: () => _showSingleAnimationDialog(
-                ctx,
+                context,
                 Indicator.values[index],
                 false,
               ),
@@ -140,4 +140,3 @@ class CustomProgressIndicator extends StatelessWidget {
       );
 }
 
-class showCode {}

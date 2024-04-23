@@ -1,15 +1,15 @@
 import 'package:all_widget/codepage/show_code_file.dart';
-import 'package:all_widget/textstyle/textstyle.dart';
+import 'package:all_widget/textstyle_support/textstyle.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 
-class SuccessDialog extends StatelessWidget {
-  const SuccessDialog({super.key});
+class InfoDialog extends StatelessWidget {
+  const InfoDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Success Dialog Box')),
+      appBar: AppBar(title: const Text('Info Dialog Box')),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -18,15 +18,15 @@ class SuccessDialog extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 122, 206, 192),
+                color: Color.fromARGB(255, 140, 124, 233),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: TextButton(
                 onPressed: () {
-                  _showSuccessDialogCode(context);
+                  _showInfoDialogCode(context);
                 },
                 child: Text(
-                  'Success Dialog Box',
+                  'Info Dialog Box',
                   style: AppWidget.textStyle(),
                 ),
               ),
@@ -43,7 +43,7 @@ class SuccessDialog extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => CodePage(
-                      code: _successDialogCode,
+                      code: _infoDialogCode,
                     ),
                   ),
                 );
@@ -61,10 +61,10 @@ class SuccessDialog extends StatelessWidget {
     );
   }
 
-  void _showSuccessDialogCode(BuildContext context) {
+  void _showInfoDialogCode(BuildContext context) {
     AwesomeDialog(
       context: context,
-      dialogType: DialogType.success,
+      dialogType: DialogType.info,
       borderSide: const BorderSide(
         color: Colors.green,
         width: 5,
@@ -82,29 +82,29 @@ class SuccessDialog extends StatelessWidget {
           ),
         );
       },
+      headerAnimationLoop: false,
       animType: AnimType.bottomSlide,
-      title: 'Success',
-      desc: 'Success Dialog Box',
-      buttonsTextStyle: const TextStyle(color: Colors.black),
+      title: 'INFO',
+      desc: 'Info Dialog Box \n This box can be close by touching outside',
       showCloseIcon: true,
       btnCancelOnPress: () {},
       btnOkOnPress: () {},
     ).show();
   }
 
-  final String _successDialogCode = '''
+  final String _infoDialogCode = '''
 import 'package:all_widget/codepage/show_code_file.dart';
 import 'package:all_widget/textstyle/textstyle.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 
-class SuccessDialog extends StatelessWidget {
-  const SuccessDialog({super.key});
+class InfoDialog extends StatelessWidget {
+  const InfoDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Success Dialog Box')),
+      appBar: AppBar(title: const Text('Info Dialog Box')),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -113,15 +113,15 @@ class SuccessDialog extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 140, 124, 233),
+                color: Color.fromARGB(255, 255, 0, 0),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: TextButton(
                 onPressed: () {
-                  _showSuccessDialogCode(context);
+                  _showInfoDialogCode(context);
                 },
                 child: Text(
-                  'Success Dialog Box',
+                  'Info Dialog Box',
                   style: AppWidget.textStyle(),
                 ),
               ),
@@ -138,7 +138,7 @@ class SuccessDialog extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => CodePage(
-                      code: _successDialogCode,
+                      code: _infoDialogCode,
                     ),
                   ),
                 );
@@ -156,10 +156,10 @@ class SuccessDialog extends StatelessWidget {
     );
   }
 
-  void _showSuccessDialogCode(BuildContext context) {
+  void _showInfoDialogCode(BuildContext context) {
     AwesomeDialog(
       context: context,
-      dialogType: DialogType.success,
+      dialogType: DialogType.info,
       borderSide: const BorderSide(
         color: Colors.green,
         width: 5,
@@ -173,20 +173,19 @@ class SuccessDialog extends StatelessWidget {
       onDismissCallback: (type) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Dismissed by ()Add Dollar sign here)type'),
+            content: Text('Dismissed by (Add the dollar sign here)type'),
           ),
         );
       },
+      headerAnimationLoop: false,
       animType: AnimType.bottomSlide,
-      title: 'Success',
-      desc: 'Success Dialog Box',
-      buttonsTextStyle: const TextStyle(color: Colors.black),
+      title: 'INFO',
+      desc: 'Info Dialog Box \n This box can be close by touching outside',
       showCloseIcon: true,
       btnCancelOnPress: () {},
       btnOkOnPress: () {},
     ).show();
   }
-
 
 ''';
 }

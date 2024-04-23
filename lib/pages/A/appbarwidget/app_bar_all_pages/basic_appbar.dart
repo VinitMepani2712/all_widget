@@ -1,15 +1,14 @@
 import 'package:all_widget/codepage/show_code_file.dart';
-import 'package:all_widget/textstyle/textstyle.dart';
-import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:all_widget/textstyle_support/textstyle.dart';
 import 'package:flutter/material.dart';
 
-class InfoDialog extends StatelessWidget {
-  const InfoDialog({super.key});
+class BasicAppBar extends StatelessWidget {
+  const BasicAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Info Dialog Box')),
+      appBar: AppBar(title: const Text('Show basic app bar')),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -18,15 +17,15 @@ class InfoDialog extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 140, 124, 233),
+                color: const Color.fromARGB(255, 206, 122, 122),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: TextButton(
                 onPressed: () {
-                  _showInfoDialogCode(context);
+                  _showBasicAppBarCode(context);
                 },
                 child: Text(
-                  'Info Dialog Box',
+                  'Show Basic App Bar',
                   style: AppWidget.textStyle(),
                 ),
               ),
@@ -43,7 +42,7 @@ class InfoDialog extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => CodePage(
-                      code: _infoDialogCode,
+                      code: _basicAppBarCode,
                     ),
                   ),
                 );
@@ -61,50 +60,40 @@ class InfoDialog extends StatelessWidget {
     );
   }
 
-  void _showInfoDialogCode(BuildContext context) {
-    AwesomeDialog(
+  void _showBasicAppBarCode(BuildContext context) {
+    showDialog(
       context: context,
-      dialogType: DialogType.info,
-      borderSide: const BorderSide(
-        color: Colors.green,
-        width: 5,
-      ),
-      width: 500,
-      buttonsBorderRadius: const BorderRadius.all(
-        Radius.circular(2),
-      ),
-      dismissOnTouchOutside: true,
-      dismissOnBackKeyPress: false,
-      onDismissCallback: (type) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Dismissed by $type'),
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Basic App Bar Code'),
+          content: const SingleChildScrollView(
+            child: ListBody(),
           ),
+          actions: [
+            TextButton(
+              child: const Text('Close'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
         );
       },
-      headerAnimationLoop: false,
-      animType: AnimType.bottomSlide,
-      title: 'INFO',
-      desc: 'Info Dialog Box \n This box can be close by touching outside',
-      showCloseIcon: true,
-      btnCancelOnPress: () {},
-      btnOkOnPress: () {},
-    ).show();
+    );
   }
 
-  final String _infoDialogCode = '''
+  final String _basicAppBarCode = '''
 import 'package:all_widget/codepage/show_code_file.dart';
 import 'package:all_widget/textstyle/textstyle.dart';
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 
-class InfoDialog extends StatelessWidget {
-  const InfoDialog({super.key});
+class BasicAppBar extends StatelessWidget {
+  const BasicAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Info Dialog Box')),
+      appBar: AppBar(title: const Text('Show basic app bar')),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -113,15 +102,15 @@ class InfoDialog extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 255, 0, 0),
+                color: const Color.fromARGB(255, 206, 122, 122),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: TextButton(
                 onPressed: () {
-                  _showInfoDialogCode(context);
+                  _showBasicAppBarCode(context);
                 },
                 child: Text(
-                  'Info Dialog Box',
+                  'Show Basic App Bar',
                   style: AppWidget.textStyle(),
                 ),
               ),
@@ -138,7 +127,7 @@ class InfoDialog extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => CodePage(
-                      code: _infoDialogCode,
+                      code: _basicAppBarCode,
                     ),
                   ),
                 );
@@ -156,35 +145,28 @@ class InfoDialog extends StatelessWidget {
     );
   }
 
-  void _showInfoDialogCode(BuildContext context) {
-    AwesomeDialog(
+  void _showBasicAppBarCode(BuildContext context) {
+    showDialog(
       context: context,
-      dialogType: DialogType.info,
-      borderSide: const BorderSide(
-        color: Colors.green,
-        width: 5,
-      ),
-      width: 500,
-      buttonsBorderRadius: const BorderRadius.all(
-        Radius.circular(2),
-      ),
-      dismissOnTouchOutside: true,
-      dismissOnBackKeyPress: false,
-      onDismissCallback: (type) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Dismissed by (Add the dollar sign here)type'),
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Basic App Bar Code'),
+          content: const SingleChildScrollView(
+            child: ListBody(
+              
+            ),
           ),
+          actions: [
+            TextButton(
+              child: const Text('Close'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
         );
       },
-      headerAnimationLoop: false,
-      animType: AnimType.bottomSlide,
-      title: 'INFO',
-      desc: 'Info Dialog Box \n This box can be close by touching outside',
-      showCloseIcon: true,
-      btnCancelOnPress: () {},
-      btnOkOnPress: () {},
-    ).show();
+    );
   }
 
 ''';
