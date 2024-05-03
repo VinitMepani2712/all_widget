@@ -1,8 +1,20 @@
+import 'package:all_widget/pages/C/card_widget.dart';
+import 'package:all_widget/pages/C/checkbox_widget.dart';
+import 'package:all_widget/pages/C/chip/chip_widget.dart';
+import 'package:all_widget/pages/C/circleavatar_widget.dart';
+import 'package:all_widget/pages/C/clipoval_widget.dart';
+import 'package:all_widget/pages/D/dateandtimepicker/date_picker_and_time_widget.dart';
+import 'package:all_widget/pages/D/divider_widget.dart';
+import 'package:all_widget/pages/D/dropdown_button_widget.dart';
+import 'package:all_widget/pages/E/elevated_button_widget.dart';
+import 'package:all_widget/pages/F/flow_widget.dart';
+import 'package:all_widget/pages/F/fractionally_sizedbox_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:all_widget/pages/B/badge_widget.dart';
+import 'package:all_widget/pages/B/bottom_sheet_widget.dart';
 import 'package:all_widget/pages/B/button_widget.dart';
 import 'package:all_widget/pages/D/all_type_of_dialogbox.dart';
 import 'package:all_widget/pages/A/all_process_Indicator_widget/all_process_widget.dart';
-import 'package:all_widget/pages/W/wrap_widget.dart';
-import 'package:flutter/material.dart';
 import 'package:all_widget/pages/A/appbarwidget/appbar_widget.dart';
 import 'package:all_widget/pages/A/aspectratio_widget.dart';
 import 'package:all_widget/pages/C/cliprrect_widget.dart';
@@ -27,6 +39,7 @@ import 'package:all_widget/pages/S/stack_widget.dart';
 import 'package:all_widget/pages/T/text_widget.dart';
 import 'package:all_widget/pages/T/textfield_widget.dart';
 import 'package:all_widget/pages/T/tooltip_widget.dart';
+import 'package:all_widget/pages/W/wrap_widget.dart';
 
 final List<Map<String, dynamic>> _widgetList = [
   {
@@ -55,6 +68,21 @@ final List<Map<String, dynamic>> _widgetList = [
     "iconData": Icons.smart_button_outlined,
   },
   {
+    "text": "Badge Widget",
+    "widget": BadgeWidget(),
+    "iconData": Icons.smart_button_outlined,
+  },
+  {
+    "text": "Bottom Sheet Widget",
+    "widget": BottomSheetWidget(),
+    "iconData": Icons.vertical_align_bottom_outlined,
+  },
+  {
+    "text": "Card Widget",
+    "widget": const CardWidget(),
+    "iconData": Icons.card_membership,
+  },
+  {
     "text": "ClipRRect Widget",
     "widget": const ClipRRectWidget(),
     "iconData": Icons.flutter_dash_sharp,
@@ -70,14 +98,66 @@ final List<Map<String, dynamic>> _widgetList = [
     "iconData": Icons.flutter_dash_sharp,
   },
   {
+    "text": "Check Box Widget",
+    "widget": CheckBoxWidget(),
+    "iconData": Icons.check_box,
+  },
+  {
+    "text": "Chip Widget",
+    "widget": const ChipWidget(
+      title: 'Chip Widget',
+    ),
+    "iconData": Icons.flutter_dash_sharp,
+  },
+  {
+    "text": "Circle Avatar Widget",
+    "widget": const CircleAvatarWidget(),
+    "iconData": Icons.circle,
+  },
+  {
+    "text": "Clip Oval Widget",
+    "widget": const ClipOvalWidget(),
+    "iconData": Icons.circle_outlined,
+  },
+  {
+    "text": "Date and Time Picker Widget",
+    "widget": DateAndTimePickerWidget(),
+    "iconData": Icons.date_range,
+  },
+  {
+    "text": "Divider Widget",
+    "widget": const DividerWidget(),
+    "iconData": Icons.diversity_1,
+  },
+  {
+    "text": "Drop Down Menu Widget",
+    "widget": DropDownMenuWidget(),
+    "iconData": Icons.arrow_drop_down_sharp,
+  },
+  {
     "text": "Drawer Widget",
     "widget": DrawerWidget(),
     "iconData": Icons.menu,
   },
   {
+    "text": "Elevated Button Widget",
+    "widget": const ElevatedButtonWidget(),
+    "iconData": Icons.smart_button,
+  },
+  {
     "text": "Expanded Widget",
     "widget": const ExpandedWidget(),
     "iconData": Icons.expand,
+  },
+  {
+    "text": "Flow Widget",
+    "widget": FlowWidget(),
+    "iconData": Icons.follow_the_signs,
+  },
+  {
+    "text": "Freactionally Sized Box",
+    "widget": FractionallySizedBoxWidet(),
+    "iconData": Icons.indeterminate_check_box,
   },
   {
     "text": "FittedBox Widget",
