@@ -1,45 +1,56 @@
-import 'package:all_widget/pages/C/card_widget.dart';
-import 'package:all_widget/pages/C/checkbox_widget.dart';
-import 'package:all_widget/pages/C/chip/chip_widget.dart';
-import 'package:all_widget/pages/C/circleavatar_widget.dart';
-import 'package:all_widget/pages/C/clipoval_widget.dart';
-import 'package:all_widget/pages/D/dateandtimepicker/date_picker_and_time_widget.dart';
-import 'package:all_widget/pages/D/divider_widget.dart';
-import 'package:all_widget/pages/D/dropdown_button_widget.dart';
-import 'package:all_widget/pages/E/elevated_button_widget.dart';
-import 'package:all_widget/pages/F/flow_widget.dart';
-import 'package:all_widget/pages/F/fractionally_sizedbox_widget.dart';
+import 'package:all_widget/pages/P/page_view_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:all_widget/pages/B/badge_widget.dart';
-import 'package:all_widget/pages/B/bottom_sheet_widget.dart';
-import 'package:all_widget/pages/B/button_widget.dart';
-import 'package:all_widget/pages/D/all_type_of_dialogbox.dart';
-import 'package:all_widget/pages/A/all_process_Indicator_widget/all_process_widget.dart';
-import 'package:all_widget/pages/A/appbarwidget/appbar_widget.dart';
-import 'package:all_widget/pages/A/aspectratio_widget.dart';
-import 'package:all_widget/pages/C/cliprrect_widget.dart';
-import 'package:all_widget/pages/C/column_widget.dart';
-import 'package:all_widget/pages/C/container_widget.dart';
-import 'package:all_widget/pages/D/drawer_widget.dart';
-import 'package:all_widget/pages/E/expanded_widget.dart';
-import 'package:all_widget/pages/F/fitted_box_widget.dart';
-import 'package:all_widget/pages/G/gridview_widget.dart';
-import 'package:all_widget/pages/G/gridviewbuilder_widget.dart';
-import 'package:all_widget/pages/I/icon__widget.dart';
-import 'package:all_widget/pages/I/image_widget.dart';
-import 'package:all_widget/pages/I/listview_widget.dart';
-import 'package:all_widget/pages/I/listviewbuilder_widget.dart';
-import 'package:all_widget/pages/O/opacity_widget.dart';
-import 'package:all_widget/pages/P/pageroute_widget.dart';
-import 'package:all_widget/pages/P/popupmenu_widget.dart';
-import 'package:all_widget/pages/P/positioned_widget.dart';
-import 'package:all_widget/pages/R/row_widget.dart';
-import 'package:all_widget/pages/S/scaffold_widget.dart';
-import 'package:all_widget/pages/S/stack_widget.dart';
-import 'package:all_widget/pages/T/text_widget.dart';
-import 'package:all_widget/pages/T/textfield_widget.dart';
-import 'package:all_widget/pages/T/tooltip_widget.dart';
-import 'package:all_widget/pages/W/wrap_widget.dart';
+
+import '../../pages/A/all_process_Indicator_widget/all_process_widget.dart';
+import '../../pages/A/appbarwidget/appbar_widget.dart';
+import '../../pages/A/aspectratio_widget.dart';
+import '../../pages/B/badge_widget.dart';
+import '../../pages/B/bottom_sheet_widget.dart';
+import '../../pages/B/button_widget.dart';
+import '../../pages/C/card_widget.dart';
+import '../../pages/C/checkbox_widget.dart';
+import '../../pages/C/chip/chip_widget.dart';
+import '../../pages/C/circleavatar_widget.dart';
+import '../../pages/C/clipoval_widget.dart';
+import '../../pages/C/cliprrect_widget.dart';
+import '../../pages/C/column_widget.dart';
+import '../../pages/C/container_widget.dart';
+import '../../pages/D/all_type_of_dialogbox.dart';
+import '../../pages/D/dateandtimepicker/date_picker_and_time_widget.dart';
+import '../../pages/D/divider_widget.dart';
+import '../../pages/D/drawer_widget.dart';
+import '../../pages/D/dropdown_button_widget.dart';
+import '../../pages/E/elevated_button_widget.dart';
+import '../../pages/E/expanded_widget.dart';
+import '../../pages/F/fitted_box_widget.dart';
+import '../../pages/F/flow_widget.dart';
+import '../../pages/F/fractionally_sizedbox_widget.dart';
+import '../../pages/F/future_builder_widget.dart';
+import '../../pages/G/gridview_widget.dart';
+import '../../pages/G/gridviewbuilder_widget.dart';
+import '../../pages/I/icon__widget.dart';
+import '../../pages/I/icon_button_widget.dart';
+import '../../pages/I/image_widget.dart';
+import '../../pages/I/index_stack_widget.dart';
+import '../../pages/I/inkwell_widget.dart';
+import '../../pages/L/ilst_view_builder_widget.dart';
+import '../../pages/L/list_tile_widget.dart';
+import '../../pages/L/list_view_custom_widget.dart';
+import '../../pages/L/list_view_separated.dart';
+import '../../pages/M/material_app_widget.dart';
+import '../../pages/M/media_query_widget.dart';
+import '../../pages/N/navigation_rail_widget.dart';
+import '../../pages/O/opacity_widget.dart';
+import '../../pages/P/pageroute_widget.dart';
+import '../../pages/P/popupmenu_widget.dart';
+import '../../pages/P/positioned_widget.dart';
+import '../../pages/R/row_widget.dart';
+import '../../pages/S/scaffold_widget.dart';
+import '../../pages/S/stack_widget.dart';
+import '../../pages/T/text_widget.dart';
+import '../../pages/T/textfield_widget.dart';
+import '../../pages/T/tooltip_widget.dart';
+import '../../pages/W/wrap_widget.dart';
 
 final List<Map<String, dynamic>> _widgetList = [
   {
@@ -160,6 +171,11 @@ final List<Map<String, dynamic>> _widgetList = [
     "iconData": Icons.indeterminate_check_box,
   },
   {
+    "text": "Future Builder Widget",
+    "widget": const FutureBuilderWidget(),
+    "iconData": Icons.flutter_dash_sharp,
+  },
+  {
     "text": "FittedBox Widget",
     "widget": const FittedBoxWidget(),
     "iconData": Icons.fit_screen_sharp,
@@ -180,19 +196,59 @@ final List<Map<String, dynamic>> _widgetList = [
     "iconData": Icons.flutter_dash_sharp,
   },
   {
+    "text": "Icon Button Widget",
+    "widget": const IconButtonWidget(),
+    "iconData": Icons.flutter_dash_sharp,
+  },
+  {
     "text": "Image Widget",
     "widget": const ImageWidget(),
     "iconData": Icons.image,
   },
   {
-    "text": "ListView Widget",
-    "widget": ListViewWidget(),
+    "text": "Index Stack Widget",
+    "widget": const IndexStackWidget(),
+    "iconData": Icons.flutter_dash_sharp,
+  },
+  {
+    "text": "Ink Well Widget",
+    "widget": InkWellWidget(),
+    "iconData": Icons.flutter_dash_sharp,
+  },
+  {
+    "text": "ListTile Widget",
+    "widget": ListTileWidget(),
     "iconData": Icons.list_alt_sharp,
   },
   {
-    "text": "ListView.builder Widget",
+    "text": "ListView builder Widget",
     "widget": ListViewBuilderWidget(),
     "iconData": Icons.list_alt_outlined,
+  },
+  {
+    "text": "ListView builder Widget",
+    "widget": const ListViewCustomWidget(),
+    "iconData": Icons.list_alt_outlined,
+  },
+  {
+    "text": "ListView builder Widget",
+    "widget": ListViewSeparatedWidget(),
+    "iconData": Icons.list_alt_outlined,
+  },
+  {
+    "text": "Material App Widget",
+    "widget": MaterialAppWidget(),
+    "iconData": Icons.flutter_dash_sharp,
+  },
+  {
+    "text": "Media Query Widget",
+    "widget": MediaQueryWidget(),
+    "iconData": Icons.flutter_dash_sharp,
+  },
+  {
+    "text": "Naviagtion Rail Widget",
+    "widget": NavigationRailWidget(),
+    "iconData": Icons.flutter_dash_sharp,
   },
   {
     "text": "Opacity Widget",
@@ -203,6 +259,11 @@ final List<Map<String, dynamic>> _widgetList = [
     "text": "PageRoute Widget",
     "widget": const PageRouteWidget(),
     "iconData": Icons.pages_rounded,
+  },
+  {
+    "text": "Page View Widget",
+    "widget": const PageViewWidget(),
+    "iconData": Icons.pages,
   },
   {
     "text": "PopupMenuButton Widget",
