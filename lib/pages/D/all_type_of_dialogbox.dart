@@ -17,55 +17,46 @@ class AllDialogTypesPage extends StatelessWidget {
       "text": "AlertDialog Box Widget",
       "widget": const AlertDialogBoxWidget(),
       "iconData": Icons.warning_outlined,
-      "color": const Color.fromARGB(255, 255, 0, 0)
     },
     {
       "text": "Auto Hide Dialog Box",
       "widget": const AutoHideDialog(),
       "iconData": Icons.flutter_dash_rounded,
-      "color": const Color.fromARGB(162, 73, 39, 224),
     },
     {
       "text": "Body With Input Dialog Box",
       "widget": const BodyWithInput(),
       "iconData": Icons.flutter_dash_rounded,
-      "color": const Color.fromARGB(162, 73, 39, 224),
     },
     {
       "text": "Custom Body Dialog Box",
       "widget": const CustomBodyDialog(),
       "iconData": Icons.flutter_dash_rounded,
-      "color": const Color.fromARGB(162, 73, 39, 224),
     },
     {
       "text": "Error Dialog Box",
       "widget": const ErrorDialog(),
       "iconData": Icons.error_outline,
-      "color": const Color.fromARGB(255, 241, 28, 28),
     },
     {
       "text": "Info Dialog Box",
       "widget": const InfoDialog(),
       "iconData": Icons.info_outline,
-      "color": const Color.fromARGB(162, 73, 39, 224),
     },
     {
       "text": " NoHeader Dialog Box",
       "widget": const NoHeaderDialog(),
       "iconData": Icons.flutter_dash_rounded,
-      "color": const Color.fromARGB(162, 73, 39, 224),
     },
     {
       "text": "Success Dialog Box",
       "widget": const SuccessDialog(),
       "iconData": Icons.check_circle_outline,
-      "color": const Color.fromARGB(255, 0, 255, 42),
     },
     {
       "text": "Warning Dialog Box",
       "widget": const WarningDialog(),
       "iconData": Icons.warning_amber_rounded,
-      "color": const Color.fromARGB(255, 255, 0, 0),
     },
   ];
 

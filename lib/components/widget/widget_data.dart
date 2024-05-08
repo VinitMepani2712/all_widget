@@ -27,6 +27,7 @@ import '../../pages/E/elevated_button_widget.dart';
 import '../../pages/E/expanded_widget.dart';
 import '../../pages/F/fitted_box_widget.dart';
 import '../../pages/F/flow_widget.dart';
+import '../../pages/F/form_filed.dart';
 import '../../pages/F/fractionally_sizedbox_widget.dart';
 import '../../pages/F/future_builder_widget.dart';
 import '../../pages/G/gridview_widget.dart';
@@ -183,6 +184,11 @@ final List<Map<String, dynamic>> _widgetList = [
   {
     "text": "FittedBox Widget",
     "widget": const FittedBoxWidget(),
+    "iconData": Icons.fit_screen_sharp,
+  },
+    {
+    "text": "Form Widget",
+    "widget":  FormFieldWidget(),
     "iconData": Icons.fit_screen_sharp,
   },
   {
@@ -344,42 +350,3 @@ final List<Map<String, dynamic>> _widgetList = [
 
 List<Map<String, dynamic>> get widgetList => _widgetList;
 
-Widget buildCard({
-  required String text,
-  required IconData iconData,
-  required VoidCallback onPressed,
-}) {
-  return Card(
-    elevation: 8,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(15),
-    ),
-    child: InkWell(
-      onTap: onPressed,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              iconData,
-              color: Colors.blue,
-              size: 40,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              text,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Roboto',
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
-}
