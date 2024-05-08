@@ -1,4 +1,7 @@
 import 'package:all_widget/pages/P/page_view_widget.dart';
+import 'package:all_widget/pages/S/safe_area_widget.dart';
+import 'package:all_widget/pages/S/slider_widget.dart';
+import 'package:all_widget/pages/T/table_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../pages/A/all_process_Indicator_widget/all_process_widget.dart';
@@ -44,8 +47,10 @@ import '../../pages/O/opacity_widget.dart';
 import '../../pages/P/pageroute_widget.dart';
 import '../../pages/P/popupmenu_widget.dart';
 import '../../pages/P/positioned_widget.dart';
+import '../../pages/R/radio_widget.dart';
 import '../../pages/R/row_widget.dart';
 import '../../pages/S/scaffold_widget.dart';
+import '../../pages/S/segmented_button_widget.dart';
 import '../../pages/S/stack_widget.dart';
 import '../../pages/T/text_widget.dart';
 import '../../pages/T/textfield_widget.dart';
@@ -276,6 +281,11 @@ final List<Map<String, dynamic>> _widgetList = [
     "iconData": Icons.auto_fix_high,
   },
   {
+    "text": "Radio Widget",
+    "widget": RadioButtonWidget(),
+    "iconData": Icons.radio_button_checked_outlined,
+  },
+  {
     "text": "Row Widget",
     "widget": const RowWidget(),
     "iconData": Icons.table_rows_rounded,
@@ -286,9 +296,29 @@ final List<Map<String, dynamic>> _widgetList = [
     "iconData": Icons.flutter_dash_sharp,
   },
   {
+    "text": "Safe Area Widget",
+    "widget": SafeAreaWidget(),
+    "iconData": Icons.stacked_bar_chart,
+  },
+  {
+    "text": "Segemented Button Widget",
+    "widget": SegmentedButtonWidget(),
+    "iconData": Icons.stacked_bar_chart,
+  },
+  {
+    "text": "Slider Widget",
+    "widget": SliderWidget(),
+    "iconData": Icons.slideshow_rounded,
+  },
+  {
     "text": "Stack Widget",
     "widget": const StackWidget(),
     "iconData": Icons.stacked_bar_chart,
+  },
+  {
+    "text": "Table Widget",
+    "widget": TableWidget(),
+    "iconData": Icons.table_chart_outlined,
   },
   {
     "text": "Text Widget",
