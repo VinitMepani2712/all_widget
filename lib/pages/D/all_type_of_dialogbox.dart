@@ -1,3 +1,4 @@
+import 'package:all_widget/components/textstyle_support/textstyle.dart';
 import 'package:all_widget/pages/D/dialgbox_all_pages/alertdialog_widget.dart';
 import 'package:all_widget/pages/D/dialgbox_all_pages/autohidebox.dart';
 import 'package:all_widget/pages/D/dialgbox_all_pages/bodywithinputbox.dart';
@@ -63,6 +64,14 @@ class AllDialogTypesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.blueAccent),
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        title: Text('Flutter All Dialog Box Widget'),
+        titleTextStyle: AppWidget.headerTextStyle(),
+      ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -75,19 +84,6 @@ class AllDialogTypesPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'Flutter All Dialog Box Widget',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blueAccent,
-                    fontFamily: 'Roboto',
-                  ),
-                ),
-              ),
               Expanded(
                 child: GridView.builder(
                   padding: const EdgeInsets.all(20),

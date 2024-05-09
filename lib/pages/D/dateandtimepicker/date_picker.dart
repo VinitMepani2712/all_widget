@@ -1,7 +1,9 @@
+import 'package:all_widget/components/textstyle_support/textstyle.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class DatePickerWidget extends StatefulWidget {
-  final Function(DateTime) onDateSelected;
+  final Function(String) onDateSelected;
 
   DatePickerWidget({required this.onDateSelected});
 
@@ -23,15 +25,30 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
       setState(() {
         _selectedDate = picked;
       });
-      widget.onDateSelected(picked);
+       String formatter = DateFormat('yyyy-MM-dd').format(picked);
+      
+      widget.onDateSelected(formatter);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () => _selectDate(context),
-      child: Text('Select Date'),
+    return Container(
+      height: 50,
+      width: 150,
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 206, 204, 204),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: TextButton.icon(
+        style: ButtonStyle(),
+        onPressed: () => _selectDate(context),
+        icon: Icon(Icons.calendar_today),
+        label: Text(
+          'Select Date',
+          style: AppWidget.timeTextStyle(),
+        ),
+      ),
     );
   }
 }

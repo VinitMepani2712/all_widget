@@ -1,5 +1,4 @@
 import 'package:all_widget/components/codepage/show_code_file.dart';
-import 'package:all_widget/components/textstyle_support/textstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
@@ -9,54 +8,62 @@ class WarningDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Warning Dialog')),
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 238, 130, 130),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: TextButton(
-                onPressed: () {
-                  _showWarningDialog(context);
-                },
-                child: Text(
-                  'Show Warning Dialog',
-                  style: AppWidget.textStyle(),
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            TextButton(
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                  Colors.black26,
-                ),
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CodePage(
-                      code: _warningDialogCode,
+      appBar: AppBar(title: const Text('Warning Dialog Box')),
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 90.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  height: 175,
+                  width: 175,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 206, 122, 122),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      _showWarningDialog(context);
+                    },
+                    child: const Text(
+                      'Warning Dialog Box',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
                     ),
                   ),
-                );
-              },
-              child: Center(
-                child: Text(
-                  'Show Code',
-                  style: AppWidget.textStyle(),
                 ),
-              ),
+                const SizedBox(height: 20),
+                Container(
+                  height: 175,
+                  width: 175,
+                  child: TextButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.black26),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CodePage(
+                            code: _warningDialogCode,
+                          ),
+                        ),
+                      );
+                    },
+                    child: const Center(
+                      child: Text(
+                        'Show Code',
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

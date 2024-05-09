@@ -10,76 +10,39 @@ class AlertDialogBoxWidget extends StatefulWidget {
 
 class _AlertDialogBoxWidgetState extends State<AlertDialogBoxWidget>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 10), // Adjust duration as needed
-    )..repeat(reverse: true);
-    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('Alert Dialog Box')),
-        body: Stack(
-          children: [
-            AnimatedBuilder(
-              animation: _animation,
-              builder: (context, child) {
-                return Container(
+      appBar: AppBar(title: const Text('Alert Dialog Box')),
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 90.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  height: 175,
+                  width: 175,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Colors.blue.withOpacity(0.4),
-                        Colors.green.withOpacity(0.6),
-                      ],
+                    color: const Color.fromARGB(255, 206, 122, 122),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      _showAlertDialogCode(context);
+                    },
+                    child: const Text(
+                      'Alert Dialog Box',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
                     ),
                   ),
-                  child: Transform.translate(
-                    offset: Offset(0, 100 * _animation.value - 100),
-                    child: child,
-                  ),
-                );
-              },
-              child: const Center(),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 206, 122, 122),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: TextButton(
-                      onPressed: () {
-                        _showAlertDialogCode(context);
-                      },
-                      child: const Text(
-                        'Alert Dialog Box',
-                        style: TextStyle(fontSize: 18, color: Colors.white),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  TextButton(
+                ),
+                const SizedBox(height: 20),
+                Container(
+                  height: 175,
+                  width: 175,
+                  child: TextButton(
                     style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.black26),
@@ -101,11 +64,13 @@ class _AlertDialogBoxWidgetState extends State<AlertDialogBoxWidget>
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 
   void _showAlertDialogCode(BuildContext context) {

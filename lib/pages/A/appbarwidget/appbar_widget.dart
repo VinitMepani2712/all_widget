@@ -5,6 +5,8 @@ import 'package:all_widget/pages/A/appbarwidget/app_bar_all_pages/tab_bar.dart';
 
 import 'package:flutter/material.dart';
 
+import '../../../components/textstyle_support/textstyle.dart';
+
 class AppBarWidget extends StatelessWidget {
   AppBarWidget({super.key});
 
@@ -13,31 +15,40 @@ class AppBarWidget extends StatelessWidget {
       "text": "Basic App Bar",
       "widget": const BasicAppBar(),
       "iconData": Icons.flutter_dash_sharp,
-      "color": const Color.fromARGB(162, 73, 39, 224),
     },
     {
       "text": "Bottom Navigation Bar",
       "widget": const BottomNavigationAppBar(),
       "iconData": Icons.flutter_dash_sharp,
-      "color": const Color.fromARGB(162, 73, 39, 224),
     },
     {
       "text": "Sliver App Bar",
       "widget": const SilverAppBar(),
       "iconData": Icons.flutter_dash_sharp,
-      "color": const Color.fromARGB(162, 73, 39, 224),
     },
     {
       "text": "Tab App Bar",
       "widget": const TabAppBar(),
       "iconData": Icons.flutter_dash_sharp,
-      "color": const Color.fromARGB(162, 73, 39, 224),
     },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.blueAccent),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        title: Text('Flutter All App Bar Widget'),
+        titleTextStyle: AppWidget.headerTextStyle(),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -50,19 +61,6 @@ class AppBarWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Text(
-                  'Flutter All App Bar Widget',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blueAccent,
-                    fontFamily: 'Roboto',
-                  ),
-                ),
-              ),
               Expanded(
                 child: GridView.builder(
                   padding: const EdgeInsets.all(20),

@@ -3,6 +3,8 @@ import 'package:all_widget/pages/A/all_process_Indicator_widget/all_process_Indi
 import 'package:all_widget/pages/A/all_process_Indicator_widget/all_process_Indicator_page_all_widget/linear_progress_indicator.dart';
 import 'package:flutter/material.dart';
 
+import '../../../components/textstyle_support/textstyle.dart';
+
 class AllProcessIndicatorPage extends StatelessWidget {
   AllProcessIndicatorPage({super.key});
 
@@ -27,6 +29,19 @@ class AllProcessIndicatorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.blueAccent),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        title: Text('Flutter All Progrss Indicator'),
+        titleTextStyle: AppWidget.headerTextStyle(),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -39,19 +54,6 @@ class AllProcessIndicatorPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Text(
-                  'Flutter All Dialog Box Widget',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blueAccent,
-                    fontFamily: 'Roboto',
-                  ),
-                ),
-              ),
               Expanded(
                 child: GridView.builder(
                   padding: const EdgeInsets.all(20),

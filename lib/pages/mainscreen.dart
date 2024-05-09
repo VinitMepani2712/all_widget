@@ -38,7 +38,10 @@ class _MainScreenPageState extends State<MainScreenPage> {
               ),
         leading: _isSearching
             ? IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: Colors.blueAccent,
+                ),
                 onPressed: () {
                   setState(() {
                     _isSearching = false;
@@ -106,7 +109,7 @@ class _MainScreenPageState extends State<MainScreenPage> {
         controller: _searchController,
         decoration: InputDecoration(
           hintText: 'Search Widgets',
-          //border: OutlineInputBorder(),
+          hintStyle: TextStyle(color: Colors.blueAccent),
         ),
         onChanged: (value) {
           setState(() {
@@ -124,7 +127,7 @@ class _MainScreenPageState extends State<MainScreenPage> {
 
   Widget _buildAppBarAction() {
     return IconButton(
-      icon: Icon(Icons.search),
+      icon: Icon(Icons.search, color: Colors.blueAccent),
       onPressed: () {
         setState(() {
           _isSearching = !_isSearching;
@@ -164,12 +167,7 @@ Widget buildCard({
             Text(
               text,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Roboto',
-              ),
+              style: AppWidget.textStyle(),
             ),
           ],
         ),

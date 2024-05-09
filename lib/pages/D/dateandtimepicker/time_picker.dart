@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../components/textstyle_support/textstyle.dart';
+
 class TimePickerWidget extends StatefulWidget {
   final Function(TimeOfDay) onTimeSelected;
 
@@ -10,7 +12,7 @@ class TimePickerWidget extends StatefulWidget {
 }
 
 class _TimePickerWidgetState extends State<TimePickerWidget> {
-  TimeOfDay? _selectedTime;
+  late TimeOfDay? _selectedTime;
 
   Future<void> _selectTime(BuildContext context) async {
     final TimeOfDay? picked = await showTimePicker(
@@ -27,9 +29,22 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () => _selectTime(context),
-      child: Text('Select Time'),
+    return Container(
+      height: 50,
+      width: 150,
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 206, 204, 204),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: TextButton.icon(
+        style: ButtonStyle(),
+        onPressed: () => _selectTime(context),
+        icon: Icon(Icons.access_time),
+        label: Text(
+          'Select Time',
+          style: AppWidget.timeTextStyle(),
+        ),
+      ),
     );
   }
 }

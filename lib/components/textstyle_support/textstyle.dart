@@ -5,7 +5,7 @@ class AppWidget {
     return const TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.bold,
-      color: Colors.blueAccent,
+      color: Colors.black,
       fontFamily: 'Roboto',
     );
   }
@@ -15,6 +15,15 @@ class AppWidget {
       fontSize: 20,
       fontWeight: FontWeight.bold,
       color: Colors.blueAccent,
+      fontFamily: 'Roboto',
+    );
+  }
+
+  static TextStyle timeTextStyle() {
+    return const TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w100,
+      color: Color.fromARGB(255, 255, 255, 255),
       fontFamily: 'Roboto',
     );
   }
