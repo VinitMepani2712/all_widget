@@ -1,3 +1,4 @@
+import 'package:all_widget/pages/A/animation_widget.dart';
 import 'package:all_widget/pages/P/page_view_widget.dart';
 import 'package:all_widget/pages/S/safe_area_widget.dart';
 import 'package:all_widget/pages/S/slider_widget.dart';
@@ -72,6 +73,11 @@ final List<Map<String, dynamic>> _widgetList = [
   {
     "text": "AppBar Widget",
     "widget": AppBarWidget(),
+    "iconData": Icons.flutter_dash_sharp,
+  },
+   {
+    "text": "Animation Widget",
+    "widget": AnimationWidget(),
     "iconData": Icons.flutter_dash_sharp,
   },
   {
@@ -186,9 +192,9 @@ final List<Map<String, dynamic>> _widgetList = [
     "widget": const FittedBoxWidget(),
     "iconData": Icons.fit_screen_sharp,
   },
-    {
+  {
     "text": "Form Widget",
-    "widget":  FormFieldWidget(),
+    "widget": FormFieldWidget(),
     "iconData": Icons.fit_screen_sharp,
   },
   {
@@ -237,12 +243,12 @@ final List<Map<String, dynamic>> _widgetList = [
     "iconData": Icons.list_alt_outlined,
   },
   {
-    "text": "ListView builder Widget",
+    "text": "ListView Custom Widget",
     "widget": const ListViewCustomWidget(),
     "iconData": Icons.list_alt_outlined,
   },
   {
-    "text": "ListView builder Widget",
+    "text": "ListView Separated Widget",
     "widget": ListViewSeparatedWidget(),
     "iconData": Icons.list_alt_outlined,
   },
@@ -349,4 +355,3 @@ final List<Map<String, dynamic>> _widgetList = [
 ];
 
 List<Map<String, dynamic>> get widgetList => _widgetList;
-

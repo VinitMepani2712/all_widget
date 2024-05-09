@@ -39,7 +39,7 @@ class _MainScreenPageState extends State<MainScreenPage> {
         leading: _isSearching
             ? IconButton(
                 icon: Icon(
-                  Icons.arrow_back,
+                  Icons.arrow_back_ios_new_sharp,
                   color: Colors.blueAccent,
                 ),
                 onPressed: () {
@@ -127,7 +127,11 @@ class _MainScreenPageState extends State<MainScreenPage> {
 
   Widget _buildAppBarAction() {
     return IconButton(
-      icon: Icon(Icons.search, color: Colors.blueAccent),
+      icon: Icon(
+        Icons.search_rounded,
+        color: Colors.blueAccent,
+        size: 30,
+      ),
       onPressed: () {
         setState(() {
           _isSearching = !_isSearching;
